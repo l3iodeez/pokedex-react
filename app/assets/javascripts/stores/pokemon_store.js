@@ -20,8 +20,8 @@
   };
 
   PokemonStore.addPokemon = function (pokemon) {
-    var idx = _pokemons.indexOf(pokemon);
-
+    var existingPokemon = PokemonStore.find(pokemon.id);
+    var idx = _pokemons.indexOf(existingPokemon);
     if (idx === -1) {
       _pokemons.push(pokemon);
     } else {

@@ -6,6 +6,7 @@ var Pokedex = React.createClass({
   render: function () {
     return (
       <div>
+        <PokemonForm />
         <PokemonIndex />
         {this.props.children}
       </div>
@@ -18,6 +19,7 @@ $(document).on('ready', function () {
   React.render((<Router>
                   <Route path="/" component={Pokedex}>
                     <Route path="/pokemon/:pokemonId" component={PokemonDetail}/>
+                    <Route path="/pokemon/:pokemonId/toys/:toyId" components={{pokeDetail: PokemonDetail, toyDetail: ToyDetail}} />
                   </Route>
                 </Router>), root);
 });

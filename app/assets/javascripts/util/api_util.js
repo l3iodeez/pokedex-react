@@ -25,4 +25,17 @@
       }
     });
   };
+  ApiUtil.createPokemon = function (pokemon, callback) {
+    $.ajax({
+      url: "/api/pokemon",
+      method: "POST",
+      dataType: "json",
+      contentType: "application/json",
+      data: JSON.stringify({pokemon: pokemon}),
+      success: function (data) {
+        ApiActions.receiveSinglePokemon(data);
+        callback && callback(data.id);
+      }
+    });
+  };
 })(this);
