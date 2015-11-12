@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'react-rails', '~> 1.3.0'
+gem 'flux-rails-assets', '~> 2.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,4 +46,3 @@ end
 group :development, :test do
   gem 'launchy'
 end
-
