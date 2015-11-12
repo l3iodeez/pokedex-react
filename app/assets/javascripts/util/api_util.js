@@ -1,6 +1,7 @@
 (function (root) {
 
   var ApiUtil = root.ApiUtil = {};
+
   ApiUtil.fetch= function () {
     $.ajax({
       url: "/api/pokemon",
@@ -13,4 +14,15 @@
     });
   };
 
+  ApiUtil.fetchPokemon= function (pokemonId) {
+    $.ajax({
+      url: "/api/pokemon/" + pokemonId,
+      method: "GET",
+      dataType: "json",
+      contentType: "json",
+      success: function (data) {
+        ApiActions.receiveSinglePokemon(data);
+      }
+    });
+  };
 })(this);

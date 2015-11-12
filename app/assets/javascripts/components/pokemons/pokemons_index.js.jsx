@@ -15,10 +15,10 @@ var PokemonIndex = React.createClass({
   },
   render: function () {
       return (
-        <div>
-        {this.state.pokemons.map(function (pokemon) {
-          return <PokemonListItem pokemon={pokemon} />
-        })}
+        <div className="pokemon-index">
+          {this.state.pokemons.map(function (pokemon) {
+            return <PokemonListItem key={pokemon.id} pokemon={pokemon} />;
+          })}
         </div>
       );
   }
